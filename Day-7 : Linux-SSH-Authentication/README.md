@@ -13,12 +13,12 @@ ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa -N ""
 This command generates a new RSA key pair with a key size of 2048 bits and saves it to the specified file. The `-N ""` option sets an empty passphrase for the key.
 
 2. Copy the public key to each app server for the respective sudo users:
-```bash ssh-copy-id -i ~/.ssh/id_rsa.pub tony@app_server_1
-ssh-copy-id -i ~/.ssh/id_rsa.pub steve@app_server_2
+```bash 
+ssh-copy-id -i ~/.ssh/id_rsa.pub tony@app_server_1
 ```
 This command copies the public key to the authorized_keys file of the respective sudo users on each app
-server. Replace `app_server_1`, `app_server_2`, and `app_server_3` with the actual hostnames or IP addresses of the app servers.
+server. Replace  `app_server_1`,  with the actual hostnames or IP addresses of the app servers.
 3. Verify the password-less SSH access:
-```bash ssh tony@app_server_1
-ssh steve@app_server_2
+```bash
+ssh tony@app_server_1
 ```
