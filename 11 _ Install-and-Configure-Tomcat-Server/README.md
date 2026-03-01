@@ -20,12 +20,7 @@ sudo yum install -y tomcat
 sudo sed -i 's/port="8080"/port="6200"/' /usr/share/tomcat/conf/server.xml
 ```
 
-3. Ensure the 6200 connector is plain HTTP (not SSL):
-```bash
-sudo sed -i '/Connector port="6200"/,/>/c\    <Connector port="6200" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />' /usr/share/tomcat/conf/server.xml
-```
-
-4. Restart Tomcat and verify listener:
+3. Restart Tomcat and verify listener:
 ```bash
 sudo systemctl restart tomcat
 sudo systemctl status tomcat --no-pager
