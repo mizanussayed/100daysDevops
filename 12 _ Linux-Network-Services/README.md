@@ -31,6 +31,13 @@ sudo grep -i 'listen' /etc/httpd/conf/httpd.conf
 ```bash
 sudo ss -ltnp | grep 8082
 sudo kill <pid>
+
+# disable the service if not needed
+sudo systemctl stop sendmail
+sudo systemctl disable sendmail
+sudo systemctl restart httpd
+sudo systemctl status httpd -l --no-pager
+sudo netstat -tulnp | grep 8082
 ```
 
 5. If the port is correct, check firewall rules:
