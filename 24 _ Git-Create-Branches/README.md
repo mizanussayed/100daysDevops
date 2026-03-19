@@ -1,16 +1,10 @@
 # Day 24: Git Create Branches
 
-## Objective
-Add your notes and commands here.
+## On Storage server in Stratos DC create a new branch xfusioncorp_games from master branch in /usr/src/kodekloudrepos/games git repo.
 
-## Steps Performed
-- 
-
-## Commands Used
 ```bash
-
+cd /usr/src/kodekloudrepos/games
+git checkout master
+git checkout -b xfusioncorp_games
 ```
-
-## Outcome
-Describe what you achieved.
 
