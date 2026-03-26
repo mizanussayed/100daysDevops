@@ -1,6 +1,6 @@
 # Day 27: Git Revert Some Changes
 
-## Objective
+## 🎯 task:
 Add your notes and commands here.
 
 ## Steps Performed
