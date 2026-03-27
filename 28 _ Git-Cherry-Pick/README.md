@@ -31,9 +31,3 @@ git cherry-pick <commit-hash>
 ```bash
 git push origin master
 ```
-
-
-
-
-
-
