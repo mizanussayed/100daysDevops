@@ -1,16 +1,28 @@
 # Day 30: Git hard reset
 
-## Objective
-Add your notes and commands here.
+##  task:
+The Nautilus application development team was working on a git repository /usr/src/kodekloudrepos/apps present on Storage server in Stratos DC. This was just a test repository and one of the developers just pushed a couple of changes for testing, but now they want to clean this repository along with the commit history/work tree, so they want to point back the HEAD and the branch itself to a commit with message add data.txt file. Find below more details:
 
-## Steps Performed
-- 
+1. In /usr/src/kodekloudrepos/apps git repository, reset the git commit history so that there are only two commits in the commit history i.e initial commit and add data.txt file.
 
-## Commands Used
+2. Also make sure to push your changes.
+
+## Solution:
+1. First, navigate to the git repository:
 ```bash
-
+cd /usr/src/kodekloudrepos/apps
 ```
-
-## Outcome
-Describe what you achieved.
+2. Use the `git log` command to find the commit hash of the commit with the message "add data.txt file":
+```bash
+git log --oneline
+```
+3. Once you have the commit hash, use the `git reset` command to reset the
+HEAD and the branch to that commit:
+```bash
+git reset --hard <commit-hash>
+```
+4. Finally, push the changes to the remote repository:
+```bash
+git push origin <branch-name> --force
+```
 
