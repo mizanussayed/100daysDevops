@@ -1,16 +1,13 @@
 # Day 51: Execute Rolling Updates in Kubernetes
 
 ## Objective
-Add your notes and commands here.
 
-## Steps Performed
-- 
+Execute a rolling update for this application, integrating the nginx:1.18 image. The deployment is named nginx-deployment.
 
-## Commands Used
+Ensure all pods are operational post-update.
+
 ```bash
-
+kubectl set image deployment/nginx-deployment nginx-container=nginx:1.18
 ```
 
-## Outcome
-Describe what you achieved.
 
