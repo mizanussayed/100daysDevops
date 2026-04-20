@@ -1,16 +1,9 @@
 # Day 52: Revert Deployment to Previous Version in Kubernetes
 
 ## Objective
-Add your notes and commands here.
+There exists a deployment named nginx-deployment; initiate a rollback to the previous revision.
 
-## Steps Performed
-- 
-
-## Commands Used
 ```bash
-
+kubectl rollout undo deployment/nginx-deployment
 ```
-
-## Outcome
-Describe what you achieved.
 
