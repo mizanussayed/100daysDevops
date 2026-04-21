@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: php-app
+  name: nginx-phpfpm
+  namespace: default
+spec:
+  containers:
+  - image: php:7.2-fpm-alpine
+    name: php-fpm-container
+    volumeMounts:
+    - mountPath: /var/www/html # This is the correct mount path for php-fpm to serve files
+      name: shared-files
+  - image: nginx:latest
+    name: nginx-container
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html # This is the correct mount path for nginx to serve files
+      name: shared-files
+    - mountPath: /etc/nginx/nginx.conf
+      name: nginx-config-volume
+      subPath: nginx.conf
+
+  volumes:
+  - emptyDir: {}
+    name: shared-files
+  - configMap:
+      defaultMode: 420
+      name: nginx-config
+    name: nginx-config-volume
+
+## one index.php file but two containers are using different path to serve the file.
+## So we need to use the same mount path for both containers to ensure they can access the same file.
