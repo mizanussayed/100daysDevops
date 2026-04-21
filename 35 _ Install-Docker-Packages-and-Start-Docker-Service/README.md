@@ -1,6 +1,6 @@
-# Day 35: Install Docker Packages and Start Docker Service
+﻿# Day 35: Install Docker Packages and Start Docker Service
 
-##  Objective
+## 🎯 task
 The Nautilus DevOps team aims to containerize various applications following a recent meeting with the application development team. They intend to conduct testing with the following steps:
 
 

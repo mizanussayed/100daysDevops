@@ -1,6 +1,6 @@
-# Day 65: Deploy Redis Deployment on Kubernetes
+﻿# Day 65: Deploy Redis Deployment on Kubernetes
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

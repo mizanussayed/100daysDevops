@@ -1,6 +1,6 @@
-# Day 86: Ansible Ping Module Usage
+﻿# Day 86: Ansible Ping Module Usage
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

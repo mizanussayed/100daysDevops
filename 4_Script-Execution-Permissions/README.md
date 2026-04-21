@@ -1,6 +1,6 @@
-# Day 4: Script Execution Permissions
+﻿# Day 4: Script Execution Permissions
 
-## Task
+## 🎯 task
 Grant executable permission to `/tmp/xfusioncorp.sh` on `App Server 1` so all users can run it.
 
 ## Why `Permission denied` happened
@@ -48,4 +48,5 @@ After (correct):
 ls -lh /tmp/xfusioncorp.sh
 -rwxr-xr-x 1 root root 40 Feb 22 13:48 /tmp/xfusioncorp.sh
 ```
+
 

@@ -1,6 +1,6 @@
-# Day 64: Fix Python App Deployed on Kubernetes Cluster
+﻿# Day 64: Fix Python App Deployed on Kubernetes Cluster
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

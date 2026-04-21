@@ -1,6 +1,6 @@
-# Day 38: Pull Docker Image
+﻿# Day 38: Pull Docker Image
 
-## Objective
+## 🎯 task
 Nautilus project developers are planning to start testing on a new project. As per their meeting with the DevOps team, they want to test containerized environment application features. As per details shared with DevOps team, we need to accomplish the following task:
 
 
@@ -19,3 +19,4 @@ docker tag busybox:musl busybox:news
 ```bash
 docker images
 ```
+

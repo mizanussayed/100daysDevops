@@ -1,6 +1,6 @@
-# Day 50: Set Resource Limits in Kubernetes Pods
+﻿# Day 50: Set Resource Limits in Kubernetes Pods
 
-## Objective
+## 🎯 task
 Create a pod named `httpd-pod` with a container named `httpd-container`. Use the httpd image with the `latest` tag (specify as httpd:latest). Set the following resource limits:
 
 Requests: Memory: 15Mi, CPU: 100m
@@ -29,4 +29,5 @@ spec:
             memory: "20Mi"
             cpu: "100m"
 ```
+
 

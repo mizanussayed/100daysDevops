@@ -1,6 +1,6 @@
-# Day 92: Managing Jinja2 Templates Using Ansible
+﻿# Day 92: Managing Jinja2 Templates Using Ansible
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

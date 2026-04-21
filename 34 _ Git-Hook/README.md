@@ -1,6 +1,6 @@
-# Day 34: Git Hook
+﻿# Day 34: Git Hook
 
-## Objective
+## 🎯 task
 Set up a `post-update` hook so every push to `master` creates a release tag in this format:
 
 `release-YYYY-MM-DD`

@@ -1,6 +1,6 @@
-# Day 36: Deploy Nginx Container on Application Server
+﻿# Day 36: Deploy Nginx Container on Application Server
 
-## Objective
+## 🎯 task
 The Nautilus DevOps team is conducting application deployment tests on selected application servers. They require a nginx container deployment on Application Server 3. Complete the task with the following instructions:
  - create a container named nginx_3 
  - using the nginx image with the alpine tag.

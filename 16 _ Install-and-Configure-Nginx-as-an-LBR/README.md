@@ -1,6 +1,6 @@
-# Day 16: Install and Configure Nginx as an LBR
+﻿# Day 16: Install and Configure Nginx as an LBR
 
-## Task
+## 🎯 task
 1. Install nginx on the LBR server if it is not installed.
 2. Configure load-balancing in the `http` context using all app servers.
 3. Update only the main nginx config file: `/etc/nginx/nginx.conf`.
@@ -100,6 +100,7 @@ sudo systemctl status httpd
 for i in {1..6}; do curl -s http://stlb01:80 > /dev/null; done
 sudo tail -f /var/log/nginx/access.log
 ```
+
 
 
 

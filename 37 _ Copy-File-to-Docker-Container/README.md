@@ -1,6 +1,6 @@
-# Day 37: Copy File to Docker Container
+﻿# Day 37: Copy File to Docker Container
 
-## Objective
+## 🎯 task
 The Nautilus DevOps team possesses confidential data on App Server 3 in the Stratos Datacenter. A container named `ubuntu_latest` is running on the same server.
 
 

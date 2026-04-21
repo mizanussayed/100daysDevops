@@ -1,6 +1,6 @@
-# Day 41: Write a Docker File
+﻿# Day 41: Write a Docker File
 
-## Objective
+## 🎯 task
 Create `/opt/docker/Dockerfile` on App Server 2 in Stratos DC and build an image with the following requirements:
 
 - Use `ubuntu:24.04` as the base image.

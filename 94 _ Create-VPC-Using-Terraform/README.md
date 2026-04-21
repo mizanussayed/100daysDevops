@@ -1,6 +1,6 @@
-# Day 94: Create VPC Using Terraform
+﻿# Day 94: Create VPC Using Terraform
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

@@ -1,6 +1,6 @@
-# Day 3: Secure Root SSH Access
+﻿# Day 3: Secure Root SSH Access
 
-## Objective
+## 🎯 task
 Following security audits, the xFusionCorp Industries security team has rolled out new protocols, including the restriction of direct root SSH login.
 
 - task is to disable direct SSH root login on all app servers within the Stratos Datacenter.
@@ -25,3 +25,4 @@ ssh root@your_server_ip
 # output should be:
 permitrootlogin no
 ```
+

@@ -1,6 +1,6 @@
-# Day 93: Using Ansible Conditionals
+﻿# Day 93: Using Ansible Conditionals
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

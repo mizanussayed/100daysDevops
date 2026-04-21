@@ -1,6 +1,6 @@
-# Day 42: Create a Docker Network
+﻿# Day 42: Create a Docker Network
 
-## Objective
+## 🎯 task
 The Nautilus DevOps team needs to set up several docker environments for different applications. One of the team members has been assigned a ticket where he has been asked to create some docker networks to be used later. Complete the task based on the following ticket description:
 
 a. Create a docker network named as official on App Server 1 in Stratos DC.
@@ -26,3 +26,4 @@ Docker supports several network drivers, including:
 - none: Disables all networking for the container, effectively isolating it from any network communication.
 - ipvlan: Similar to macvlan, but it operates at the IP layer instead of the MAC layer, allowing for more efficient network communication in certain scenarios.
 - transparent: A driver specific to Windows containers that allows them to connect directly to the physical network. Each driver has its own use cases and configurations, so it's important to choose the right one based on your specific requirements and network architecture.
+

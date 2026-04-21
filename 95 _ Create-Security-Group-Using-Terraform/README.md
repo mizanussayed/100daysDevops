@@ -1,6 +1,6 @@
-# Day 95: Create Security Group Using Terraform
+﻿# Day 95: Create Security Group Using Terraform
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

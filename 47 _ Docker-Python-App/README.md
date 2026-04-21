@@ -1,6 +1,6 @@
-# Day 47: Docker Python App
+﻿# Day 47: Docker Python App
 
-## Objective
+## 🎯 task
 A python app needed to be Dockerized, and then it needs to be deployed on App Server 1. We have already copied a requirements.txt file (having the app dependencies) under /python_app/src/ directory on App Server 1. Further complete this task as per details mentioned below:
 
 Create a Dockerfile under /python_app directory:
@@ -37,3 +37,4 @@ CMD ["python", "server.py"]
 docker build -t nautilus/python-app .
 docker run -d --name pythonapp_nautilus -p 8095:5002 nautilus/python-app
 ```
+

@@ -1,6 +1,6 @@
-# Day 9: MariaDB Troubleshooting
+﻿# Day 9: MariaDB Troubleshooting
 
-## Task
+## 🎯 task
 The Nautilus application was unable to connect to the database in Stratos DC.
 Initial investigation showed the MariaDB service was down on the DB server (`stdb01`).
 
@@ -55,5 +55,6 @@ sudo journalctl -xeu mariadb.service
 ## Final Status
 MariaDB service was restored and verified. The database layer is healthy again for application connectivity.
 systemctl status mariadb
+
 
 

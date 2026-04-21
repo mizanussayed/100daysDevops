@@ -1,6 +1,6 @@
-# Day 56: Deploy Nginx Web Server on Kubernetes Cluster
+﻿# Day 56: Deploy Nginx Web Server on Kubernetes Cluster
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

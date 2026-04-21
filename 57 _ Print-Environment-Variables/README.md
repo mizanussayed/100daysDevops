@@ -1,6 +1,6 @@
-# Day 57: Print Environment Variables
+﻿# Day 57: Print Environment Variables
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

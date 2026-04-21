@@ -1,6 +1,6 @@
-# Day 67: Deploy Guest Book App on Kubernetes
+﻿# Day 67: Deploy Guest Book App on Kubernetes
 
-## Objective
+## 🎯 task
 Add your notes and commands here.
 
 ## Steps Performed
@@ -13,4 +13,5 @@ Add your notes and commands here.
 
 ## Outcome
 Describe what you achieved.
+
 

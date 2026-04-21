@@ -1,6 +1,6 @@
-# Day 46: Deploy an App on Docker Containers
+﻿# Day 46: Deploy an App on Docker Containers
 
-## Objective
+## 🎯 task
 The Nautilus application development team recently finished an app they want to deploy on a containerized platform. They want to test the deployment on App Server 3 before going live and set up a complete container stack using Docker Compose. Below are the task details:
 
 1. On App Server 3 in Stratos Datacenter, create a Docker Compose file at /opt/data/docker-compose.yml. The file name must match exactly.
@@ -65,3 +65,4 @@ Confirm the deployment with:
 ```bash
 curl <server-ip or hostname>:6400/
 ```
+

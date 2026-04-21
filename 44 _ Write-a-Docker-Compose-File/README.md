@@ -1,6 +1,6 @@
-# Day 44: Write a Docker Compose File
+﻿# Day 44: Write a Docker Compose File
 
-## Objective
+## 🎯 task
 The Nautilus application development team shared static website content that needs to be hosted on the httpd web server using a containerised platform. The team has shared details with the DevOps team, and we need to set up an environment according to those guidelines. Below are the details:
 
 
@@ -23,4 +23,5 @@ services:
     volumes:
       - /opt/dba:/usr/local/apache2/htdocs
 ```
+
 
