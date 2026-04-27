@@ -30,16 +30,18 @@ metadata:
   name: pvc-xfusion
 spec:
   storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 2Gi
-  accessModes:
-    - ReadWriteOnce
 ---
 apiVersion: v1
 kind: Pod
 metadata:
   name: pod-xfusion
+  labels:
+    app: pod-xfusion   # ✅ important for Service
 spec:
   containers:
     - name: container-xfusion
@@ -47,10 +49,10 @@ spec:
       volumeMounts:
         - name: web-content
           mountPath: /usr/local/apache2/htdocs/
-    volumes:
-      - name: web-content
-        persistentVolumeClaim:
-          claimName: pvc-xfusion
+  volumes:
+    - name: web-content
+      persistentVolumeClaim:
+        claimName: pvc-xfusion
 ---
 apiVersion: v1
 kind: Service
@@ -59,7 +61,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: pod-xfusion
+    app: pod-xfusion   # ✅ matches Pod label
   ports:
     - port: 80
       targetPort: 80
