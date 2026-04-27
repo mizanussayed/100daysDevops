@@ -1,17 +1,5 @@
 ﻿# Day 59: Troubleshoot Deployment issues in Kubernetes
 
 ## 🎯 task
-Add your notes and commands here.
-
-## Steps Performed
-- 
-
-## Commands Used
-```bash
-
-```
-
-## Outcome
-Describe what you achieved.
-
+The deployment name is redis-deployment. The pods are not in running state right now, so please look into the issue and fix the same.
 
