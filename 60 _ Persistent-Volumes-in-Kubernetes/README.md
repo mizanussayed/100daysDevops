@@ -41,7 +41,7 @@ kind: Pod
 metadata:
   name: pod-xfusion
   labels:
-    app: pod-xfusion   # ✅ important for Service
+    app: pod-xfusion   # important for Service
 spec:
   containers:
     - name: container-xfusion
@@ -61,7 +61,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: pod-xfusion   # ✅ matches Pod label
+    app: pod-xfusion   # matches Pod label
   ports:
     - port: 80
       targetPort: 80
