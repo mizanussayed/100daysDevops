@@ -22,6 +22,7 @@ Note:
 sudo apt update
 sudo apt install jenkins -y
 sudo service jenkins start
+sudo service jenkins status
 
 
 
