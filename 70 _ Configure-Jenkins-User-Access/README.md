@@ -29,7 +29,7 @@ Note:
    * Go to **Manage Jenkins → Plugins**
    * Under **Available Plugins**, search for:
 
-     * `Matrix Authorization Strategy`
+     *  **Matrix Authorization Strategy**
    * Install it.
    * Select **Restart Jenkins when installation is complete and no jobs are running**.
 
