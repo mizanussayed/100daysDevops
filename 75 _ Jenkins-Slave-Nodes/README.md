@@ -181,3 +181,6 @@ Repeat with:
 
 to verify all nodes work correctly.
 
+![alt text](img1.png)
+
+![alt text](image.png)
