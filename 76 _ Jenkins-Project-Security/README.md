@@ -19,8 +19,12 @@ c.) Grant mentioned permissions to `rohan` user : `build`, `cancel`, `configure`
 ## 🧑‍💻 solution
 
 ## install jenkins plugin
-`Matrix Authorization Strategy` plugin is required to implement the solution for this task.
+`Matrix Authorization Strategy`
 
-![alt text](image.png)
+![alt text](1.png)
 
-![alt text](image-1.png)
+![alt text](2.png)
+
+![alt text](3.png)
+
+
