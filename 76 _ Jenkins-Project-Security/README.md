@@ -26,5 +26,3 @@ c.) Grant mentioned permissions to `rohan` user : `build`, `cancel`, `configure`
 ![alt text](2.png)
 
 ![alt text](3.png)
-
-
