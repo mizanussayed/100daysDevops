@@ -18,14 +18,17 @@ Deploy the code from web_app repository under `/var/www/html` on App Server 1, a
 
 
 ## 🧑‍💻 solution
+1. need install below plugins:
+   - **SSH Agent plugin**
+   - **Pipeline plugin**
 
-1. To add credentials of app server 1 for the Jenkins agent, follow these steps:
+2. To add credentials of app server 1 for the Jenkins agent, follow these steps:
     - Go to Jenkins dashboard and click on "Manage Jenkins".
     - Click on "Manage Credentials".
     - Click on "Global credentials (unrestricted)" and then click on "Add Credentials".
-    - Select "SSH Username with private key" as the kind of credential.
+    - Select "SSH Username with password" as the kind of credential.
 
-1. To add a slave node named App Server 1, follow these steps:
+3. To add a slave node named App Server 1, follow these steps:
 
    - Go to Jenkins dashboard and click on "Manage Jenkins".
    - Click on "Manage Nodes and Clouds".
@@ -34,31 +37,44 @@ Deploy the code from web_app repository under `/var/www/html` on App Server 1, a
    - Fill in the required details:
      - Remote root directory: /home/sarah/jenkins_agent
      - Labels: stapp01
+     - Launch method: Launch agents via SSH
    - Click "Save".
 
-2. To create a Jenkins pipeline job named xfusion-webapp-job, follow these steps:
+4. To allow the Jenkins agent to restart Apache without a password, you need to edit the sudoers file on App Server 1. Follow these steps:
+
+   - SSH into App Server 1 using the credentials of user `sarah`.
+   - Open the sudoers file using the command `sudo visudo`.
+   - Add the following line at the end of the file to allow user `sarah` to restart Apache without a password:
+
+```bash
+sudo yum install java-17-openjdk java-17-openjdk-devel -y
+sudo visudo
+sarah ALL=(ALL) NOPASSWD: /bin/systemctl restart httpd
+``` 
+
+
+5. To create a Jenkins pipeline job named xfusion-webapp-job, follow these steps:
     - Go to Jenkins dashboard and click on "New Item".
     - Enter the name "xfusion-webapp-job" and select "Pipeline", then click "OK".
     - In the pipeline configuration, scroll down to the "Pipeline" section.
     - Select "Pipeline script" and enter the following script:
-    
+
 ```groovy
 pipeline {
     agent { label 'stapp01' }
     stages {
         stage('Deploy') {
             steps {
-                // Pull the latest code from the repository
-                sh 'cd /var/www/html && git pull origin main'
-                
-                // Restart Apache to apply changes
-                sh 'sudo systemctl restart apache2'
+                sh 'cd /var/www/html && git pull origin master'
+                sh 'systemctl restart httpd'
             }
         }
     }
 }
 ```
     
- - Click "Save".
 
 
+![alt text](image.png)
+
+![alt text](image-1.png)
