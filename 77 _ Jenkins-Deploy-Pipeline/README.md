@@ -52,7 +52,6 @@ sudo visudo
 sarah ALL=(ALL) NOPASSWD: /bin/systemctl restart httpd
 ``` 
 
-
 5. To create a Jenkins pipeline job named xfusion-webapp-job, follow these steps:
     - Go to Jenkins dashboard and click on "New Item".
     - Enter the name "xfusion-webapp-job" and select "Pipeline", then click "OK".
