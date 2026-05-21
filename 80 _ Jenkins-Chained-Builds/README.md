@@ -1,17 +1,16 @@
 ﻿# Day 80: Jenkins Chained Builds
 
 ## 🎯 task
-Add your notes and commands here.
+1. Create a Jenkins job named `devops-app-deployment` and configure it to pull changes from the master branch of the web repository on App Server 1 under /var/www/html directory.
 
-## Steps Performed
-- 
+2. Create another Jenkins job named `manage-services` and make it a downstream job for `devops-app-deployment`. Things to take care about this job are:
 
-## Commands Used
-```bash
+    a. This job should restart httpd service on the app server (App Server 1).
 
-```
-
-## Outcome
-Describe what you achieved.
+    b. Trigger this job only if the upstream job i.e `devops-app-deployment` is stable.
 
 
+## 🧑‍💻 solution
+
+
+![alt text](image.png)
