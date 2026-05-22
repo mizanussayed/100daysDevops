@@ -50,7 +50,7 @@ Deploy the code from web_app repository under `/var/www/html` on App Server 1, a
 sudo yum install java-17-openjdk java-17-openjdk-devel -y
 sudo visudo
 sarah ALL=(ALL) NOPASSWD: /bin/systemctl restart httpd
-``` 
+```
 
 5. To create a Jenkins pipeline job named xfusion-webapp-job, follow these steps:
     - Go to Jenkins dashboard and click on "New Item".
