@@ -1,0 +1,2 @@
+[app_servers]
+stapp01 ansible_host=stapp01 ansible_user=tony ansible_ssh_pass='Ir0nM@n'
