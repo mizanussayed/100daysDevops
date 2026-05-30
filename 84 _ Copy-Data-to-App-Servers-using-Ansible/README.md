@@ -9,11 +9,6 @@ b. Create a playbook /home/thor/ansible/playbook.yml on the jump host to copy th
 
 ## 🧑‍💻 solution
 
--- Application Server 1	Dynamic	stapp01	tony	Ir0nM@n	Hosts Nautilus Application 1
--- Application Server 2	Dynamic	stapp02	steve	Am3ric@	Hosts Nautilus Application 2
--- Application Server 3	Dynamic	stapp03	banner	BigGr33n	Hosts Nautilus Application 3
-
-
 ### Step 1: Create Inventory File
 On the jump host, create the inventory file at /home/thor/ansible/inventory with the following content:
 
