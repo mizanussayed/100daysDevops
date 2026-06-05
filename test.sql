@@ -75,15 +75,15 @@ WHERE COLUMN_NAME = 'Email'
     AND TABLE_NAME = 'Employees' AND TABLE_SCHEMA = 'dbo')
 BEGIN
     PRINT 'Email column not fund'
-END
+END 
 ---------------------- Merge Table -----------------------
 MERGE Employees2 AS T
 USING Employees AS S
 ON T.ID = S.ID 
 WHEN MATCHED THEN
-   UPDATE SET T.Name = S.Name  
+   UPDATE SET T.GenderId = S.GenderId
 WHEN NOT MATCHED BY TARGET THEN
-  INSERT (ID, Name) VALUES (S.ID, S.Name)
+  INSERT (ID, Name, CITY, SALARY) VALUES (S.ID, S.Name, s.city, s.salary)
 WHEN NOT MATCHED BY Source THEN
   DELETE;
 
@@ -98,16 +98,17 @@ SELECT ID , NAME, City
 FROM Employees
 WHERE ID NOT IN (
 SELECT ID
-FROM Employees2)
+FROM Employees2
+WHERE ID > 3)
 
 ---------------------- Intersect Operator VS INNER JOIN -----------------------
-    SELECT ID , NAME
+SELECT ID , NAME
     FROM Employees
 INTERSECT
-    SELECT Id, Name
+SELECT Id, Name
     FROM Employees2
---NOT IN
-SELECT emp.ID , emp.NAME, City
+--INNER JOIN 
+SELECT emp.ID , emp.NAME, emp.City
 FROM Employees emp
     INNER JOIN Employees2 ON emp.ID = Employees2.ID
 ----------------------Cross Apply / inner Join with fn-----------------------
@@ -128,12 +129,12 @@ BEGIN
     RETURN
 END
 GO
-SELECT D. Name DepartmentName , emp.Name, emp.City
-FROM Departments D
+SELECT D.GenderName DepartmentName , emp.Name, emp.City
+FROM Genders D
 CROSS APPLY fnEmployeeByDept(D.ID) emp
 ----------------------Outer Apply / left Join with fn-----------------------
-SELECT D. Name DepartmentName , emp.Name, emp.City
-FROM Departments D
+SELECT D. GenderName DepartmentName , emp.Name, emp.City
+FROM Genders D
 OUTER APPLY fnEmployeeByDept(D.ID) emp
 ----------------------Table type valued Parameter-----------------------
 CREATE TYPE EmpTableType AS TABLE   --- create type
@@ -169,7 +170,7 @@ Grand Total
 --------------------------------By Union All-------------
 SELECT Emp.ID, Name, Gen.GenderName, Salary, City
 FROM Employees Emp
-    JOIN Genders Gen ON Emp.GenderId = Gen.ID
+JOIN Genders Gen ON Emp.GenderId = Gen.ID
 -----
     SELECT City, GenderName, SUM(Salary)
     FROM Employees Emp
@@ -201,6 +202,7 @@ GROUP BY
         (GenderName),
         ()
     )
+
 ORDER BY GROUPING(City), GROUPING(GenderName)
 
 ----------------------------Rollup With Group by ------------------
@@ -270,8 +272,9 @@ SELECT Name, city, Salary,
     SUM(Salary) Over( PARTITION by city order by Id) Total
 FROM Employees
 ----------------------------Ntile ----------------------
-SELECT Name, City,
-    Ntile(3) Over(ORDER by Id) [Ntile]
+SELECT Id, NAME, CITY FROM Employees ORDER BY Id
+SELECT Name, City, salary,
+    Ntile(4) Over(ORDER by salary desc) [Ntile]
 FROM Employees
 SELECT Name, City,
     Ntile(3) Over( Partition by city ORDER by Id) [Ntile]
@@ -279,26 +282,26 @@ FROM Employees
 ----------------------------Lead & Lag ----------------------
 --Lead(Column_Name, Offset, Default_Value)
 --Lag(Column_Name, Offset, Default_Value)
-SELECT Name, City, Salary,
-    Lead(Salary) Over(ORDER by Id) Lead_2
+SELECT Id, Name, City, Salary,
+    Lead(Salary) Over(ORDER by salary) Lead_2
 FROM Employees
 SELECT Name, City, Salary,
-    Lead(Salary, 2, 1000) Over(ORDER by Id) Lead_2
+    Lead(Salary, 2, 1000) Over(ORDER by salary) Lead_2
 FROM Employees
 SELECT Name, City, Salary,
     Lead(Salary) Over(partition by city ORDER by Id) Lead_2
 FROM Employees
 SELECT Name, City, Salary,
-    Lead(Salary) Over(ORDER by Id) Lead_2,
+    Lead(Salary) Over(ORDER by salary desc) Lead_2,
     Salary,
-    lag(Salary) Over(ORDER by Id) Lag_2
+    lag(Salary) Over(ORDER by salary desc) Lag_2
 FROM Employees
 ----------------------------First_Value / Last_Value----------------------
 SELECT Name, City, Salary,
     First_Value(Name) Over(ORDER by Salary desc) FirsValue
 FROM Employees
-SELECT Name, Salary,
-    Last_Value(Name) Over(ORDER by Salary desc) FirsValue
+SELECT Name, city, Salary,
+    Last_Value(Name) Over(ORDER by Salary desc) lastValue
 FROM Employees
 ----------------------------Rows or Range Clause----------------------
 --not sum whole range
@@ -337,10 +340,11 @@ SELECT CASE DATEPART(MONTH, GETDATE())
           WHEN 2 THEN 'feb'
           WHEN 3 THEN 'Mar'
           WHEN 4 THEN 'Apr'
+          WHEN 5 THEN 'MAY'
 END AS [Month]
 --Using Choose 
 -- Chose(index, val_1, val_2)
-SELECT CHOOSE(DATEPART(MM, GETDATE()), 'Jan', 'Feb', 'Mar', 'Apr') AS [Month]
+SELECT CHOOSE(DATEPART(MM, GETDATE()), 'Jan', 'Feb', 'Mar', 'Apr', 'MAY') AS [Month]
 
 ----------------------------IIF Function----------------------
 --Iff(boolean_exp, true_val, false_val)
