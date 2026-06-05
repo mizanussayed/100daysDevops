@@ -50,6 +50,10 @@ Also make sure this new line is added at the top of the file.
         path: /var/www/html/index.html
         line: "Welcome to xFusionCorp Industries!"
         insertbefore: BOF
+
+    - name: Set correct permissions and ownership on index.html
+      file:
+        path: /var/www/html/index.html
         owner: apache
         group: apache
         mode: '0644'
