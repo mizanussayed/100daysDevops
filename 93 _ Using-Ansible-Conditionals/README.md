@@ -54,3 +54,28 @@
 ansible-playbook /home/thor/ansible/playbook.yml
 ansible stapp01 -m stat -a "path=/opt/itadmin/blog.txt"
 ```
+
+
+
+## Simplified Version
+```yaml
+---
+- name: Using Ansible Conditionals
+  hosts: all
+  become: true
+
+  vars:
+    file_map:
+      stapp01: blog.txt
+      stapp02: story.txt
+      stapp03: media.txt
+
+  tasks:
+    - name: Copy appropriate file
+      copy:
+        src: "/usr/src/itadmin/{{ file_map[inventory_hostname] }}"
+        dest: "/opt/itadmin/{{ file_map[inventory_hostname] }}"
+        owner: "{{ owner_name }}"
+        group: "{{ owner_name }}"
+        mode: '0744'
+```
